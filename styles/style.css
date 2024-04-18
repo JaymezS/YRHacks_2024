@@ -196,7 +196,7 @@ button:hover {
 }
 
 
-#backgrounds-available {
+#backgrounds-available #bunnies-available{
   display:flex;
   flex-direction: row;
   flex-wrap: wrap;
