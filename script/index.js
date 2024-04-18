@@ -13,6 +13,7 @@ const ADD_TASK_BUTTON = document.getElementById("add-task-button");
 const TASK_NAME_INPUT = document.getElementById("to-do-name");
 const TASK_TIME_INPUT = document.getElementById("task-time-input")
 const TASKS_LIST_DISPLAY = document.getElementById("tasks-list-display")
+const RESET_BUTTON = document.getElementById("reset-button");
 
 
 const GLOBAL_TIMER = new CountdownTimer(0)
@@ -32,6 +33,9 @@ window.addEventListener("load", function() {
   setTimer(1500); 
 })
 
+RESET_BUTTON.addEventListener("click", () => {
+  GLOBAL_TIMER.resetTimer();
+})
 
 ADD_TASK_BUTTON.addEventListener("click", () => {
   addNewTask();
@@ -54,6 +58,10 @@ SET_TIMER_BUTTON.addEventListener("click", () => {
   const TIME_HOUR_INPUT = Number(TIMER_HOUR_INPUT.value);
   const TIME_MINUTE_INPUT = Number(TIMER_MINUTE_INPUT.value);
   const TIME_SECOND_INPUT = Number(TIMER_SECOND_INPUT.value);
+
+  TIMER_HOUR_INPUT.value = "";
+  TIMER_MINUTE_INPUT.value = "";
+  TIMER_SECOND_INPUT.value = "";
 
   if (!isNaN(TIME_HOUR_INPUT) && !isNaN(TIME_MINUTE_INPUT) && !isNaN(TIME_SECOND_INPUT)) {
     GLOBAL_TIMER.setTime(Number(TIME_HOUR_INPUT * 3600 + TIME_MINUTE_INPUT * 60 + TIME_SECOND_INPUT));
