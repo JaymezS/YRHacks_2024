@@ -16,6 +16,9 @@ body {
 
 button {
   font-family: 'Rubik';
+  border: none;
+  padding: 3px 10px;
+  border-radius: 2px;
 }
 
 /* Main Text */
@@ -112,4 +115,22 @@ button.dropdownContent:hover {
 
 button:hover {
   background-color: #f6cbc0;
+}
+
+/* Task Bar */
+#tasks {
+  text-align: left;
+}
+
+#tasks h3 {
+  margin-top: 20px;
+  margin-bottom: 5px;
+}
+
+#tasks input, #tasks button {
+  width: 100%;
+}
+
+#tasks button {
+  margin-top: 20px;
 }
