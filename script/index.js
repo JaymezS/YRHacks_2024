@@ -9,6 +9,8 @@ const TASK_TIME_INPUT = document.getElementById("task-time-input");
 const TASKS_LIST_DISPLAY = document.getElementById("tasks-list-display");
 const CURRENT_TASK_DISPLAY = document.getElementById("current-task-display");
 const TOTAL_COINS_DISPLAY = document.getElementById("total-coins")
+const BACKGROUND_SHOP = document.getElementById("background-shop-popup");
+
 
 const GLOBAL_TIMER = new CountdownTimer(0)
 GLOBAL_TIMER.setDisplayElement(TIMER_DISPLAY);
@@ -16,7 +18,11 @@ GLOBAL_TIMER.setDisplayElement(TIMER_DISPLAY);
 const GLOBAL_TASK_LIST = new Tasks();
 GLOBAL_TASK_LIST.setTasksDisplayContainer(TASKS_LIST_DISPLAY)
 
-let coins = 0;
+const BACKGROUNDS_TO_BUY = ["background-beach", "background-field", "background-hell"];
+const BACKGROUNDS_OWNED = ["background-library"]
+
+let coins = 100;
+let bunnyLevel = 0;
 let isTimerDone = false;
 let isStudying = false;
 
@@ -26,12 +32,18 @@ function setTimer(time) {
 }
 
 
+function updateCoinsDisplay() {
+  TOTAL_COINS_DISPLAY.innerText = coins
+}
+
+updateCoinsDisplay()
+
 // checker
 const CHECK_FREQUENCY = 1000
 setInterval(() => {
   if (GLOBAL_TIMER.currentTime === 0) {
     if (isTimerDone && isStudying) {
-      coins += GLOBAL_TIMER.TOTAL_TIME / 60;
+      coins += Math.floor(GLOBAL_TIMER.TOTAL_TIME / 60);
       TOTAL_COINS_DISPLAY.innerText = coins;
       isTimerDone = false;
     }
@@ -119,3 +131,15 @@ function runTasks() {
     isTimerDone = true;
   }
 }
+
+
+function backgroundShopPopup() {
+  BACKGROUND_SHOP.style.display = "block";
+}
+
+
+function hideBackgroundShopPopup() {
+  BACKGROUND_SHOP.style.display = "none";
+}
+
+
