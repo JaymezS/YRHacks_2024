@@ -10,6 +10,7 @@ const TASKS_LIST_DISPLAY = document.getElementById("tasks-list-display");
 const CURRENT_TASK_DISPLAY = document.getElementById("current-task-display");
 const TOTAL_COINS_DISPLAY = document.getElementById("total-coins")
 const BACKGROUND_SHOP = document.getElementById("background-shop-popup");
+const BACKGROUNDS_AVAILABLE_DISPLAY = document.getElementById("backgrounds-available")
 
 
 const GLOBAL_TIMER = new CountdownTimer(0)
@@ -143,3 +144,7 @@ function hideBackgroundShopPopup() {
 }
 
 
+function displayBackgroundShop() {
+  for (let i = 0; i < BACKGROUNDS_TO_BUY.length; i++) {
+  }
+}
