@@ -5,7 +5,7 @@ class shopItem {
     this.HTML_CONTAINER;
   }
 
-  createItemHTML() {
+  createItemHTML(imageWidth, imageHeight) {
     this.HTML_CONTAINER = document.createElement("div");
     this.HTML_CONTAINER.setAttribute("class", "shop-item");
 
@@ -16,8 +16,8 @@ class shopItem {
   
     const IMAGE = document.createElement("img")
     IMAGE.src = `./imgs/${this.imageSrc}`; 
-    IMAGE.style.width = "160px";
-    IMAGE.style.height = "90px";
+    IMAGE.style.width = `${imageWidth}px`;
+    IMAGE.style.height = `${imageHeight}px`;
 
     const BUTTON = document.createElement("button");
     BUTTON.innerText = "Buy";

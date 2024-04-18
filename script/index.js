@@ -20,14 +20,14 @@ GLOBAL_TIMER.setDisplayElement(TIMER_DISPLAY);
 const GLOBAL_TASK_LIST = new Tasks();
 GLOBAL_TASK_LIST.setTasksDisplayContainer(TASKS_LIST_DISPLAY)
 
-const BUNNIES_SHOP_CLASS = new Shop();
+const BUNNIES_SHOP_CLASS = new Shop("bunnies");
 BUNNIES_SHOP_CLASS.setShopDisplayElement(BUNNIES_AVAILABLE_DISPLAY);
 
 BUNNIES_SHOP_CLASS.addItem(new shopItem("bunny-brown.PNG", "Brown Bunny"));
 BUNNIES_SHOP_CLASS.addItem(new shopItem("bunny-spotted.PNG", "Spotted Bunny"));
 BUNNIES_SHOP_CLASS.addItem(new shopItem("bunny-white.PNG", "White Bunny"));
 
-const BACKGROUND_SHOP_CLASS = new Shop();
+const BACKGROUND_SHOP_CLASS = new Shop("background");
 BACKGROUND_SHOP_CLASS.setShopDisplayElement(BACKGROUNDS_AVAILABLE_DISPLAY)
 
 BACKGROUND_SHOP_CLASS.addItem(new shopItem("background-beach.PNG", "Beach"))
