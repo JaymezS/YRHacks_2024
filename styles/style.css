@@ -201,3 +201,7 @@ button:hover {
   flex-direction: row;
   flex-wrap: wrap;
 }
+
+.shop-item p {
+  margin-top: 10px;
+}
