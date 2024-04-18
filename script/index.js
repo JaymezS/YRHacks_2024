@@ -8,6 +8,7 @@ const SET_LONG_BREAK_BUTTON = document.getElementById("long-break-button");
 const TASK_TIME_INPUT = document.getElementById("task-time-input");
 const TASKS_LIST_DISPLAY = document.getElementById("tasks-list-display");
 const CURRENT_TASK_DISPLAY = document.getElementById("current-task-display");
+const TOTAL_COINS_DISPLAY = document.getElementById("total-coins")
 
 const GLOBAL_TIMER = new CountdownTimer(0)
 GLOBAL_TIMER.setDisplayElement(TIMER_DISPLAY);
@@ -31,7 +32,7 @@ setInterval(() => {
   if (GLOBAL_TIMER.currentTime === 0) {
     if (isTimerDone && isStudying) {
       coins += GLOBAL_TIMER.TOTAL_TIME / 60;
-      document.getElementById("total-coins").innerText = coins;
+      TOTAL_COINS_DISPLAY.innerText = coins;
       isTimerDone = false;
     }
 
