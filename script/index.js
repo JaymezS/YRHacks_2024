@@ -51,15 +51,15 @@ ADD_TASK_BUTTON.addEventListener("click", () => {
 
 // Preset timers
 SET_POMODORO_BUTTON.addEventListener("click", () => {
-  setTimer(1500);
+  addTaskToTaskList("POMODORO", 1500)
 })
 
 SET_SHORT_BREAK_BUTTON.addEventListener("click", () => {
-  setTimer(300);
+  addTaskToTaskList("Short Break", 300)
 })
 
 SET_LONG_BREAK_BUTTON.addEventListener("click", () => {
-  setTimer(600);
+  addTaskToTaskList("Long Break", 600);
 })
 
 TIMER_START_BUTTON.addEventListener("click", () => {
@@ -83,14 +83,17 @@ function addNewTask() {
   const TASK_TIME = Number(TIME_HOUR_INPUT * 3600 + TIME_MINUTE_INPUT * 60 + TIME_SECOND_INPUT);
 
   if (!isNaN(TASK_TIME)) {
-    const NEW_TASK = new Task(TASK_NAME, TASK_TIME);
-    GLOBAL_TASK_LIST.addTask(NEW_TASK)
-    GLOBAL_TASK_LIST.displayTasks();
+    addTaskToTaskList(TASK_NAME, TASK_TIME)
   }
+}
+
+function addTaskToTaskList(name, time) {
+  const NEW_TASK = new Task(name, time);
+  GLOBAL_TASK_LIST.addTask(NEW_TASK)
+  GLOBAL_TASK_LIST.displayTasks();
   GLOBAL_TIMER.setTime(GLOBAL_TASK_LIST.tasksList[0].time)
   GLOBAL_TIMER.displayTime()
 }
-
 
 function runTasks() {
   const TASKS_TO_RUN = GLOBAL_TASK_LIST.tasksList;
