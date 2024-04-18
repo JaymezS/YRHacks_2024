@@ -23,6 +23,10 @@ const BACKGROUND_SHOP_CLASS = new Shop();
 BACKGROUND_SHOP_CLASS.setShopDisplayElement(BACKGROUNDS_AVAILABLE_DISPLAY)
 
 BACKGROUND_SHOP_CLASS.addItem(new shopItem("background-beach.png", "Beach"))
+BACKGROUND_SHOP_CLASS.addItem(new shopItem("background-field.png", "Field"))
+BACKGROUND_SHOP_CLASS.addItem(new shopItem("background-hell.png", "Hell"))
+BACKGROUND_SHOP_CLASS.addItem(new shopItem("background-library.png", "Library"))
+
 BACKGROUND_SHOP_CLASS.displayAll()
 
 const BACKGROUNDS_TO_BUY = ["background-beach", "background-field", "background-hell"];

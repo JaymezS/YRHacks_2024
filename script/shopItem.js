@@ -10,6 +10,8 @@ class shopItem {
     this.HTML_CONTAINER.setAttribute("class", "shop-item");
 
     const LABEL = document.createElement("p");
+    LABEL.style.fontSize = "Large"
+    LABEL.style.color = "black"
     LABEL.innerText = this.id;
   
     const IMAGE = document.createElement("img")
