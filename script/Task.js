@@ -1,15 +1,20 @@
 class Task {
   time;
   taskLabel;
+  taskContainer;
   constructor(name, duration) {
     this.taskLabel = name;
     this.time = duration;
   }
 
   createBlock() {
-    const TASK_CONTAINER= document.createElement("div");
+    this.taskContainer= document.createElement("div");
     const TASK_NAME = this.taskLabel;
-    TASK_CONTAINER.innerText = TASK_NAME + "Time: " + String(this.time);
-    return TASK_CONTAINER;
+    this.taskContainer.innerText = TASK_NAME + " Time: " + String(this.time);
+    return this.taskContainer;
+  }
+
+  deleteBlock() {
+    this.taskContainer.remove()
   }
 }

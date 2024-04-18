@@ -97,5 +97,7 @@ function runTasks() {
     const CURRENT_TASK = TASKS_TO_RUN[0];
     GLOBAL_TASK_LIST.tasksList.shift();
     GLOBAL_TIMER.setTime(CURRENT_TASK.time)
+    GLOBAL_TIMER.displayTime();
+    CURRENT_TASK.deleteBlock()
   }
 }
