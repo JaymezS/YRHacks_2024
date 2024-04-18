@@ -44,6 +44,26 @@ window.addEventListener("load", function() {
 })
 
 
+function getTimeAsString(time) {
+  const HOURS = Math.floor(time / 3600);
+  const MINUTES = Math.floor((time - HOURS * 3600) / 60);
+  const SECONDS = time - HOURS * 3600 - MINUTES * 60;
+
+  let message = ""
+  const TIME = [HOURS, MINUTES, SECONDS]
+  for (let i = 0; i < 3; i++) {
+    if (TIME[i] < 10) {
+      message += `0${TIME[i]}`
+    } else {
+      message += String(TIME[i])
+    }
+    if (i != 2) {
+      message += ":"
+    }
+  }
+  return message
+}
+
 // Preset timers
 SET_POMODORO_BUTTON.addEventListener("click", () => {
   addTaskToTaskList("Study", 1500)
