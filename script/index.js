@@ -16,9 +16,13 @@ const TASKS_LIST_DISPLAY = document.getElementById("tasks-list-display")
 const GLOBAL_TIMER = new CountdownTimer(0)
 GLOBAL_TIMER.setDisplayElement(TIMER_DISPLAY);
 
-
 const GLOBAL_TASK_LIST = new Tasks();
 GLOBAL_TASK_LIST.setTasksDisplayContainer(TASKS_LIST_DISPLAY)
+
+
+let coins = 0;
+
+
 
 function setTimer(time) {
   GLOBAL_TIMER.setTime(time);
@@ -30,13 +34,16 @@ function setTimer(time) {
 const CHECK_FREQUENCY = 1000
 setInterval(() => {
   if (GLOBAL_TIMER.currentTime === 0) {
+
+    // a timer runs out (assume it is completed)
+    coins += 10
     runTasks()
   }
 }, CHECK_FREQUENCY)
 
 
 window.addEventListener("load", function() {
-  setTimer(1500); 
+  setTimer(0); 
 })
 
 ADD_TASK_BUTTON.addEventListener("click", () => {
