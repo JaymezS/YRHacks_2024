@@ -9,10 +9,15 @@ const TIMER_DISPLAY = document.getElementById("timer-display");
 const SET_POMODORO_BUTTON = document.getElementById("pomodoro-button");
 const SET_SHORT_BREAK_BUTTON = document.getElementById("short-break-button");
 const SET_LONG_BREAK_BUTTON = document.getElementById("long-break-button");
+const ADD_TASK_BUTTON = document.getElementById("add-task-button");
 
 
 const GLOBAL_TIMER = new CountdownTimer(0)
 GLOBAL_TIMER.setDisplayElement(TIMER_DISPLAY);
+
+ADD_TASK_BUTTON.addEventListener("click", () => {
+  addNewTask();
+})
 
 // Preset timers
 SET_POMODORO_BUTTON.addEventListener("click", () => {
@@ -50,3 +55,7 @@ TIMER_STOP_BUTTON.addEventListener("click", () => {
 })
 
 
+//Functions
+function addNewTask() {
+  new Tasks;
+}
