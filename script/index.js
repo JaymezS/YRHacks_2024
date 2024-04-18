@@ -12,10 +12,15 @@ const SET_LONG_BREAK_BUTTON = document.getElementById("long-break-button");
 const ADD_TASK_BUTTON = document.getElementById("add-task-button");
 const TASK_NAME_INPUT = document.getElementById("to-do-name");
 const TASK_TIME_INPUT = document.getElementById("task-time-input")
+const TASKS_LIST_DISPLAY = document.getElementById("tasks-list-display")
 
 
 const GLOBAL_TIMER = new CountdownTimer(0)
 GLOBAL_TIMER.setDisplayElement(TIMER_DISPLAY);
+
+
+const GLOBAL_TASK_LIST = new Tasks();
+GLOBAL_TASK_LIST.setTasksDisplayContainer(TASKS_LIST_DISPLAY)
 
 function setTimer(time) {
   GLOBAL_TIMER.setTime(time);
@@ -26,7 +31,6 @@ window.addEventListener("load", function() {
   setTimer(1500); 
 })
 
-const GLOBAL_TASK_LIST = new Tasks();
 
 ADD_TASK_BUTTON.addEventListener("click", () => {
   addNewTask();
@@ -72,7 +76,7 @@ function addNewTask() {
 
   if (!isNaN(TASK_TIME)) {
     const NEW_TASK = new Task(TASK_NAME, TASK_TIME);
-    console.log(NEW_TASK)
     GLOBAL_TASK_LIST.addTask(NEW_TASK)
+    GLOBAL_TASK_LIST.displayTasks();
   }
 }

@@ -18,8 +18,8 @@ class Tasks {
 
   displayTasks() {
     this.tasksDisplayContainer.innerHTML = "";
-    for (let i = 0; i < this.tasks.length; i++) {
-      this.tasksDisplayContainer.appendChild(tasks[i].createBlock());
+    for (let i = 0; i < this.currentTasks.length; i++) {
+      this.tasksDisplayContainer.appendChild(this.currentTasks[i].createBlock());
     }
   }
   //add delete function, choose task function etc.
