@@ -81,6 +81,7 @@ div.dropdown {
 
 div.dropdown:hover {
   background-color: #f6cbc0;
+  border-radius: 10px;
 }
 
 div.dropdown:hover .dropdownContent {
@@ -94,6 +95,7 @@ div.dropdownContent {
   background-color: #f9f9f9;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
+  border-radius: 10px;
 }
 
 button.dropdownContent {
@@ -114,6 +116,7 @@ button.dropdownContent:hover {
 
 button:hover {
   background-color: #f6cbc0;
+  border-radius: 10px;
 }
 
 /* Task Bar */
