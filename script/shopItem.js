@@ -19,6 +19,8 @@ class shopItem {
 
     this.HTML_CONTAINER.appendChild(IMAGE)
     this.HTML_CONTAINER.appendChild(LABEL)
+
+    return this.HTML_CONTAINER;
   }
 
   deleteItemHTML() {

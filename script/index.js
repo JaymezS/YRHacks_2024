@@ -19,6 +19,12 @@ GLOBAL_TIMER.setDisplayElement(TIMER_DISPLAY);
 const GLOBAL_TASK_LIST = new Tasks();
 GLOBAL_TASK_LIST.setTasksDisplayContainer(TASKS_LIST_DISPLAY)
 
+const BACKGROUND_SHOP_CLASS = new Shop();
+BACKGROUND_SHOP_CLASS.setShopDisplayElement(BACKGROUNDS_AVAILABLE_DISPLAY)
+
+BACKGROUND_SHOP_CLASS.addItem(new shopItem("background-beach.png", "Beach"))
+BACKGROUND_SHOP_CLASS.displayAll()
+
 const BACKGROUNDS_TO_BUY = ["background-beach", "background-field", "background-hell"];
 const BACKGROUNDS_OWNED = ["background-library"]
 
