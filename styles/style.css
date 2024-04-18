@@ -171,3 +171,24 @@ button:hover {
 #tasks button {
   margin-top: 20px;
 }
+
+
+#background-shop-popup {
+  display: none;
+  position: fixed;
+  top: 10vh;
+  left:10vw;
+  z-index:10;
+  width:80vw;
+  height:80vh;
+  background-color: gray;
+  opacity: 0.9;
+  border-radius: 20px;
+}
+
+
+#background-exit-button {
+  width:80vw;
+  height:100px;
+  border-radius: 20px, 20px, 0, 0;
+}
