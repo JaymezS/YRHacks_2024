@@ -59,6 +59,7 @@ div.to-do p {
   justify-content: center;  
   border:10px solid lightgray;
   border-radius: 10px;
+  border-width: 5px;
   margin-top:5px;
   padding:5px;
   font-size:large
