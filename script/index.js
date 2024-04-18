@@ -24,8 +24,8 @@ const BUNNIES_SHOP_CLASS = new Shop();
 BUNNIES_SHOP_CLASS.setShopDisplayElement(BUNNIES_AVAILABLE_DISPLAY);
 
 BUNNIES_SHOP_CLASS.addItem(new shopItem("bunny-brown.PNG", "Brown Bunny"));
-BUNNIES_SHOP_CLASS.addItem(new shopItem("bunny-spotted.PNG", "Brown Bunny"));
-BUNNIES_SHOP_CLASS.addItem(new shopItem("bunny-white.PNG", "Brown Bunny"));
+BUNNIES_SHOP_CLASS.addItem(new shopItem("bunny-spotted.PNG", "Spotted Bunny"));
+BUNNIES_SHOP_CLASS.addItem(new shopItem("bunny-white.PNG", "White Bunny"));
 
 const BACKGROUND_SHOP_CLASS = new Shop();
 BACKGROUND_SHOP_CLASS.setShopDisplayElement(BACKGROUNDS_AVAILABLE_DISPLAY)
@@ -138,7 +138,21 @@ const BUY_WHITE_BUNNY = document.getElementById("White Bunny-button");
 BUY_BROWN_BUNNY.addEventListener("click", () => {
   const bought = buyItem(50);
   if(bought) {
-    document.getElementById("bunny-image").src = "url('imgs/bunny-brown.PNG)";
+    document.getElementById("bunny-image").src = "imgs/bunny-brown.PNG";
+  }
+})
+
+BUY_SPOTTED_BUNNY.addEventListener("click", () => {
+  const bought = buyItem(50);
+  if(bought) {
+    document.getElementById("bunny-image").src = "imgs/bunny-spotted.PNG";
+  }
+})
+
+BUY_WHITE_BUNNY.addEventListener("click", () => {
+  const bought = buyItem(50);
+  if(bought) {
+    document.getElementById("bunny-image").src = "imgs/bunny-white.PNG";
   }
 })
 
