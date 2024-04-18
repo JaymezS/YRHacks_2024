@@ -21,7 +21,11 @@ const GLOBAL_TASK_LIST = new Tasks();
 GLOBAL_TASK_LIST.setTasksDisplayContainer(TASKS_LIST_DISPLAY)
 
 const BUNNIES_SHOP_CLASS = new Shop();
-BUNNIES_SHOP_CLASS.setShopDisplayElement(BUNNIES_AVAILABLE_DISPLAY)
+BUNNIES_SHOP_CLASS.setShopDisplayElement(BUNNIES_AVAILABLE_DISPLAY);
+
+BUNNIES_SHOP_CLASS.addItem(new shopItem("bunny-brown.PNG", "Brown Bunny"));
+BUNNIES_SHOP_CLASS.addItem(new shopItem("bunny-spotted.PNG", "Brown Bunny"));
+BUNNIES_SHOP_CLASS.addItem(new shopItem("bunny-white.PNG", "Brown Bunny"));
 
 const BACKGROUND_SHOP_CLASS = new Shop();
 BACKGROUND_SHOP_CLASS.setShopDisplayElement(BACKGROUNDS_AVAILABLE_DISPLAY)
@@ -32,12 +36,9 @@ BACKGROUND_SHOP_CLASS.addItem(new shopItem("background-hell.PNG", "Hell"))
 BACKGROUND_SHOP_CLASS.addItem(new shopItem("background-library.PNG", "Library"))
 
 BACKGROUND_SHOP_CLASS.displayAll()
-
-const BACKGROUNDS_TO_BUY = ["background-beach", "background-field", "background-hell"];
-const BACKGROUNDS_OWNED = ["background-library"]
+BUNNIES_SHOP_CLASS.displayAll()
 
 let coins = 100;
-let bunnyLevel = 0;
 let isTimerDone = false;
 let isStudying = false;
 
@@ -103,7 +104,6 @@ const BUY_LIBRARY_BUTTON = document.getElementById("Library-button");
 
 BUY_BEACH_BUTTON.addEventListener("click", () => {
   const bought = buyItem(100);
-  console.log(bought);
   if (bought) {
     document.body.style.backgroundImage = "url('imgs/background-beach.PNG')";
   }
@@ -111,7 +111,6 @@ BUY_BEACH_BUTTON.addEventListener("click", () => {
 
 BUY_FIELD_BUTTON.addEventListener("click", () => {
   const bought = buyItem(100);
-  console.log(bought);
   if (bought) {
     document.body.style.backgroundImage = "url('imgs/background-field.PNG')";
   }
@@ -119,7 +118,6 @@ BUY_FIELD_BUTTON.addEventListener("click", () => {
 
 BUY_HELL_BUTTON.addEventListener("click", () => {
   const bought = buyItem(100);
-  console.log(bought);
   if (bought) {
     document.body.style.backgroundImage = "url('imgs/background-hell.PNG')";
   }
@@ -127,11 +125,23 @@ BUY_HELL_BUTTON.addEventListener("click", () => {
 
 BUY_LIBRARY_BUTTON.addEventListener("click", () => {
   const bought = buyItem(100);
-  console.log(bought);
   if (bought) {
     document.body.style.backgroundImage = "url('imgs/background-library.PNG')";
   }
 })
+
+
+const BUY_BROWN_BUNNY = document.getElementById("Brown Bunny-button");
+const BUY_SPOTTED_BUNNY = document.getElementById("Spotted Bunny-button");
+const BUY_WHITE_BUNNY = document.getElementById("White Bunny-button");
+
+BUY_BROWN_BUNNY.addEventListener("click", () => {
+  const bought = buyItem(50);
+  if(bought) {
+    document.getElementById("bunny-image").src = "url('imgs/bunny-brown.PNG)";
+  }
+})
+
 
 SET_POMODORO_BUTTON.addEventListener("click", () => {
   addTaskToTaskList("Study", 1500)
