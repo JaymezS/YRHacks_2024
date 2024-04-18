@@ -5,10 +5,13 @@ class Tasks {
     let element = document.createElement("div");
 
     const TASK_NAME = TASK_NAME_INPUT.value;
-    TASK_NAME_INPUT.value = "";
-    element.innerText = TASK_NAME;
-    let row = document.getElementById("tasks").appendChild(element);
-    row.appendChild(complete);
+
+    if (TASK_NAME !== "") {
+      TASK_NAME_INPUT.value = "";
+      element.innerText = TASK_NAME;
+      let row = document.getElementById("tasks").appendChild(element);
+      row.appendChild(complete);
+    } 
   }
 
   //add delete function, choose task function etc.
