@@ -3,7 +3,10 @@ class Tasks {
     let complete = document.createElement("button");
     complete.innerText = "done";
     let element = document.createElement("div");
-    element.innerText = "Hello";
+
+    const TASK_NAME = TASK_NAME_INPUT.value;
+    TASK_NAME_INPUT.value = "";
+    element.innerText = TASK_NAME;
     let row = document.getElementById("tasks").appendChild(element);
     row.appendChild(complete);
   }

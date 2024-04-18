@@ -10,6 +10,7 @@ const SET_POMODORO_BUTTON = document.getElementById("pomodoro-button");
 const SET_SHORT_BREAK_BUTTON = document.getElementById("short-break-button");
 const SET_LONG_BREAK_BUTTON = document.getElementById("long-break-button");
 const ADD_TASK_BUTTON = document.getElementById("add-task-button");
+const TASK_NAME_INPUT = document.getElementById("to-do-name");
 
 
 const GLOBAL_TIMER = new CountdownTimer(0)
