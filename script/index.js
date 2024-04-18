@@ -5,8 +5,9 @@ const TIMER_DISPLAY = document.getElementById("timer-display");
 const SET_POMODORO_BUTTON = document.getElementById("pomodoro-button");
 const SET_SHORT_BREAK_BUTTON = document.getElementById("short-break-button");
 const SET_LONG_BREAK_BUTTON = document.getElementById("long-break-button");
-const TASK_TIME_INPUT = document.getElementById("task-time-input")
-const TASKS_LIST_DISPLAY = document.getElementById("tasks-list-display")
+const TASK_TIME_INPUT = document.getElementById("task-time-input");
+const TASKS_LIST_DISPLAY = document.getElementById("tasks-list-display");
+const CURRENT_TASK_DISPLAY = document.getElementById("current-task-display");
 
 const GLOBAL_TIMER = new CountdownTimer(0)
 GLOBAL_TIMER.setDisplayElement(TIMER_DISPLAY);
@@ -62,7 +63,11 @@ TIMER_START_BUTTON.addEventListener("click", () => {
 })
 
 TIMER_STOP_BUTTON.addEventListener("click", () => {
-  GLOBAL_TIMER.pauseTimer()
+  if (GLOBAL_TIMER.timer) {
+    GLOBAL_TIMER.pauseTimer()
+  } else {
+    GLOBAL_TIMER.runTimer()
+  }
 })
 
 
@@ -70,8 +75,6 @@ function addTaskToTaskList(name, time) {
   const NEW_TASK = new Task(name, time);
   GLOBAL_TASK_LIST.addTask(NEW_TASK)
   GLOBAL_TASK_LIST.displayTasks();
-  GLOBAL_TIMER.setTime(GLOBAL_TASK_LIST.tasksList[0].time)
-  GLOBAL_TIMER.displayTime()
 }
 
 function runTasks() {
@@ -81,6 +84,7 @@ function runTasks() {
     GLOBAL_TASK_LIST.tasksList.shift();
     GLOBAL_TIMER.setTime(CURRENT_TASK.time)
     GLOBAL_TIMER.displayTime();
+    CURRENT_TASK_DISPLAY.innerText = CURRENT_TASK.taskLabel;
     CURRENT_TASK.deleteBlock()
   }
 }
