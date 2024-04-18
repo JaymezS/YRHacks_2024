@@ -11,10 +11,13 @@ const SET_SHORT_BREAK_BUTTON = document.getElementById("short-break-button");
 const SET_LONG_BREAK_BUTTON = document.getElementById("long-break-button");
 const ADD_TASK_BUTTON = document.getElementById("add-task-button");
 const TASK_NAME_INPUT = document.getElementById("to-do-name");
+const TASK_TIME_INPUT = document.getElementById("task-time-input")
 
 
 const GLOBAL_TIMER = new CountdownTimer(0)
 GLOBAL_TIMER.setDisplayElement(TIMER_DISPLAY);
+
+const GLOBAL_TASK_LIST = new Tasks();
 
 ADD_TASK_BUTTON.addEventListener("click", () => {
   addNewTask();
@@ -58,5 +61,10 @@ TIMER_STOP_BUTTON.addEventListener("click", () => {
 
 //Functions
 function addNewTask() {
-  new Tasks;
+  const TASK_NAME = TASK_NAME_INPUT.value;
+  const TASK_TIME = Number(TASK_TIME_INPUT.value);
+
+  if (!isNaN(TASK_TIME)) {
+    GLOBAL_TASK_LIST.addTask(new Task(TASK_NAME, TASK_TIME))
+  }
 }
