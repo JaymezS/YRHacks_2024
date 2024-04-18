@@ -1,6 +1,3 @@
-
-
-
 class CountdownTimer {
   // the current time left on the timer in seconds
   currentTime;
@@ -13,6 +10,7 @@ class CountdownTimer {
     this.displayElement = htmlTextElement;
   }
   setTime(time) {
+    this.pauseTimer();
     this.currentTime = time
   }
   getTime() {

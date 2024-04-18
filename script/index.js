@@ -1,4 +1,3 @@
-
 // HTML Elements
 const TIMER_HOUR_INPUT = document.getElementById("timer-hour-input");
 const TIMER_MINUTE_INPUT = document.getElementById("timer-minute-input");
@@ -7,11 +6,29 @@ const SET_TIMER_BUTTON = document.getElementById("set-timer-button");
 const TIMER_START_BUTTON = document.getElementById("timer-start-button");
 const TIMER_STOP_BUTTON = document.getElementById("timer-stop-button");
 const TIMER_DISPLAY = document.getElementById("timer-display");
+const SET_POMODORO_BUTTON = document.getElementById("pomodoro-button");
+const SET_SHORT_BREAK_BUTTON = document.getElementById("short-break-button");
+const SET_LONG_BREAK_BUTTON = document.getElementById("long-break-button");
 
 
 const GLOBAL_TIMER = new CountdownTimer(0)
 GLOBAL_TIMER.setDisplayElement(TIMER_DISPLAY);
 
+// Preset timers
+SET_POMODORO_BUTTON.addEventListener("click", () => {
+  GLOBAL_TIMER.setTime(1500);
+  GLOBAL_TIMER.displayTime();
+})
+
+SET_SHORT_BREAK_BUTTON.addEventListener("click", () => {
+  GLOBAL_TIMER.setTime(300);
+  GLOBAL_TIMER.displayTime();
+})
+
+SET_LONG_BREAK_BUTTON.addEventListener("click", () => {
+  GLOBAL_TIMER.setTime(600);
+  GLOBAL_TIMER.displayTime();
+})
 
 SET_TIMER_BUTTON.addEventListener("click", () => {
   const TIME_HOUR_INPUT = Number(TIMER_HOUR_INPUT.value);
