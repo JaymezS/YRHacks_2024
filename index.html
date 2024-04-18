@@ -13,6 +13,35 @@
   <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
+  <!-- Menu Bar -->
+  <div class="menuBar" id="menu-bar">
+    <!-- settings button on the right of the menu bar -->
+    <button type="button" style="float:right" class="menuButton" onclick="openCoins();">Coins</button>
+
+    <!-- "Insert" dropdown button on the left of the menu bar -->
+    <div style="float:left" class="dropdown">
+      Settings
+      <div style="float:left" class="dropdownContent">
+        <button type="button" id="a" style="float:left" class="dropdownContent" onclick="openPomodoroTimer();">Pomodoro</button>
+        <button type="button" id="b" style="float:left" class="dropdownContent" onclick="openShortBreakTimer();">Short Break</button>
+        <button type="button" id="c" style="float:left" class="dropdownContent" onclick="openLongBreak();">Long Break</button>
+        <button type="button" id="c" style="float:left" class="dropdownContent" onclick="openCustomTimer();">Custom Timer</button>
+      </div>
+    </div>
+
+    <!-- "Style" dropdown button on the left of the menu bar -->
+    <div style="float:left" class="dropdown">
+      Shop
+      <div style="float:left" class="dropdownContent">
+        <button type="button" id="d" style="float:left" class="dropdownContent" onclick="bold();">Backgrounds</button>
+        <button type="button" id="e" style="float:left" class="dropdownContent" onclick="underline();">Bunnies</button>`
+      </div>
+    </div>
+  </div>
+
+  <br/>
+
+
   <h1>Heading</h1>
 
   <div>
