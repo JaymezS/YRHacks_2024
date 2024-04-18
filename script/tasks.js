@@ -7,7 +7,7 @@ class Tasks {
   }
 
 
-  addTask(taskLabel, task) {
+  addTask(task) {
     this.currentTasks.push(task);
   }
 

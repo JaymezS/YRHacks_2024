@@ -71,6 +71,8 @@ function addNewTask() {
   const TASK_TIME = Number(TASK_TIME_INPUT.value);
 
   if (!isNaN(TASK_TIME)) {
-    GLOBAL_TASK_LIST.addTask(new Task(TASK_NAME, TASK_TIME))
+    const NEW_TASK = new Task(TASK_NAME, TASK_TIME);
+    console.log(NEW_TASK)
+    GLOBAL_TASK_LIST.addTask(NEW_TASK)
   }
 }
