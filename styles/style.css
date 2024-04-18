@@ -51,9 +51,16 @@ div.to-do {
   justify-content: center;
   border:10px solid lightgray;
   border-radius: 10px;
-  margin-top:10px;
-  padding:10px;
+  margin-top:5px;
+  padding:5px;
   font-size:large
+}
+
+
+#tasks-list-display {
+  height:160px;
+  overflow-y: scroll;
+
 }
 
 th.to-do {
