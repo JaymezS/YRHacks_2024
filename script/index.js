@@ -17,6 +17,7 @@ GLOBAL_TASK_LIST.setTasksDisplayContainer(TASKS_LIST_DISPLAY)
 
 let coins = 0;
 let isTimerDone = false;
+let isStudying = false;
 
 function setTimer(time) {
   GLOBAL_TIMER.setTime(time);
@@ -28,13 +29,14 @@ function setTimer(time) {
 const CHECK_FREQUENCY = 1000
 setInterval(() => {
   if (GLOBAL_TIMER.currentTime === 0) {
-    if (isTimerDone) {
+    if (isTimerDone && isStudying) {
       coins += GLOBAL_TIMER.TOTAL_TIME / 60;
       document.getElementById("total-coins").innerText = coins;
       isTimerDone = false;
     }
 
-    runTasks()
+    runTasks();
+
   }
 }, CHECK_FREQUENCY)
 
@@ -67,14 +69,20 @@ function getTimeAsString(time) {
 // Preset timers
 SET_POMODORO_BUTTON.addEventListener("click", () => {
   addTaskToTaskList("Study", 1500)
+  isStudying = true;
+  isTimerDone = false;
 })
 
 SET_SHORT_BREAK_BUTTON.addEventListener("click", () => {
   addTaskToTaskList("Short Break", 300)
+  isStudying = false;
+  isTimerDone = false;
 })
 
 SET_LONG_BREAK_BUTTON.addEventListener("click", () => {
   addTaskToTaskList("Long Break", 600);
+  isStudying = false;
+  isTimerDone = false;
 })
 
 TIMER_START_BUTTON.addEventListener("click", () => {
