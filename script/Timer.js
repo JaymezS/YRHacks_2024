@@ -3,6 +3,7 @@ class CountdownTimer {
   currentTime;
   timer;
   displayElement;
+  TOTAL_TIME;
 
   // GETTERS AND SETTERS
 
@@ -12,6 +13,7 @@ class CountdownTimer {
   setTime(time) {
     this.pauseTimer();
     this.currentTime = time
+    this.TOTAL_TIME = time
   }
   getTime() {
     return this.currentTime;
@@ -22,8 +24,8 @@ class CountdownTimer {
   constructor(time) {
     this.currentTime = time;
   }
-
-
+  
+  
   // Interface Code
   pauseTimer() {
     if (this.timer) {
@@ -31,8 +33,8 @@ class CountdownTimer {
       this.timer = undefined;
     }
   }
-
-
+  
+  
   runTimer() {
     if (!this.timer) {
       this.timer = setInterval(() => {
@@ -46,8 +48,12 @@ class CountdownTimer {
       }, 1000)
     }
   }
-
-
+  
+  resetTimer() {
+    this.setTime(this.TOTAL_TIME);
+    this.displayTime();
+  }
+  
   getTimeInHourFormat() {
     const HOURS = Math.floor(this.currentTime / 3600);
     const MINUTES = Math.floor((this.currentTime - HOURS * 3600) / 60);
@@ -72,4 +78,5 @@ class CountdownTimer {
     }
     this.displayElement.innerText = message;
   }
+
 }
