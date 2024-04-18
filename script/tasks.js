@@ -6,7 +6,6 @@ class Tasks {
     this.tasksDisplayContainer = HTMLContainerElement;
   }
 
-
   addTask(task) {
     this.tasksList.push(task);
   }
@@ -15,12 +14,10 @@ class Tasks {
     this.tasksList = [];
   }
 
-
   displayTasks() {
     this.tasksDisplayContainer.innerHTML = "";
     for (let i = 0; i < this.tasksList.length; i++) {
       this.tasksDisplayContainer.appendChild(this.tasksList[i].createBlock());
     }
   }
-  //add delete function, choose task function etc.
 }

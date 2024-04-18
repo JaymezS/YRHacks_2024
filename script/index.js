@@ -10,15 +10,15 @@ const TASKS_LIST_DISPLAY = document.getElementById("tasks-list-display");
 const CURRENT_TASK_DISPLAY = document.getElementById("current-task-display");
 const TOTAL_COINS_DISPLAY = document.getElementById("total-coins")
 const BACKGROUND_SHOP = document.getElementById("background-shop-popup");
-const BACKGROUNDS_AVAILABLE_DISPLAY = document.getElementById("backgrounds-available")
+const BACKGROUNDS_AVAILABLE_DISPLAY = document.getElementById("backgrounds-available");
 const BUNNIES_SHOP = document.getElementById("bunnies-shop-popup")
 const BUNNIES_AVAILABLE_DISPLAY = document.getElementById("bunnies-available")
 
-const GLOBAL_TIMER = new CountdownTimer(0)
+const GLOBAL_TIMER = new CountdownTimer(0);
 GLOBAL_TIMER.setDisplayElement(TIMER_DISPLAY);
 
 const GLOBAL_TASK_LIST = new Tasks();
-GLOBAL_TASK_LIST.setTasksDisplayContainer(TASKS_LIST_DISPLAY)
+GLOBAL_TASK_LIST.setTasksDisplayContainer(TASKS_LIST_DISPLAY);
 
 const BUNNIES_SHOP_CLASS = new Shop("bunnies");
 BUNNIES_SHOP_CLASS.setShopDisplayElement(BUNNIES_AVAILABLE_DISPLAY);
@@ -28,15 +28,15 @@ BUNNIES_SHOP_CLASS.addItem(new shopItem("bunny-spotted.PNG", "Spotted Bunny"));
 BUNNIES_SHOP_CLASS.addItem(new shopItem("bunny-white.PNG", "White Bunny"));
 
 const BACKGROUND_SHOP_CLASS = new Shop("background");
-BACKGROUND_SHOP_CLASS.setShopDisplayElement(BACKGROUNDS_AVAILABLE_DISPLAY)
+BACKGROUND_SHOP_CLASS.setShopDisplayElement(BACKGROUNDS_AVAILABLE_DISPLAY);
 
-BACKGROUND_SHOP_CLASS.addItem(new shopItem("background-beach.PNG", "Beach"))
-BACKGROUND_SHOP_CLASS.addItem(new shopItem("background-field.PNG", "Field"))
-BACKGROUND_SHOP_CLASS.addItem(new shopItem("background-hell.PNG", "Hell"))
-BACKGROUND_SHOP_CLASS.addItem(new shopItem("background-library.PNG", "Library"))
+BACKGROUND_SHOP_CLASS.addItem(new shopItem("background-beach.PNG", "Beach"));
+BACKGROUND_SHOP_CLASS.addItem(new shopItem("background-field.PNG", "Field"));
+BACKGROUND_SHOP_CLASS.addItem(new shopItem("background-hell.PNG", "Hell"));
+BACKGROUND_SHOP_CLASS.addItem(new shopItem("background-library.PNG", "Library"));
 
-BACKGROUND_SHOP_CLASS.displayAll()
-BUNNIES_SHOP_CLASS.displayAll()
+BACKGROUND_SHOP_CLASS.displayAll();
+BUNNIES_SHOP_CLASS.displayAll();
 
 let coins = 1500;
 let isTimerDone = false;
@@ -49,13 +49,13 @@ function setTimer(time) {
 
 
 function updateCoinsDisplay() {
-  TOTAL_COINS_DISPLAY.innerText = coins
+  TOTAL_COINS_DISPLAY.innerText = coins;
 }
 
-updateCoinsDisplay()
+updateCoinsDisplay();
 
 // checker
-const CHECK_FREQUENCY = 1000
+const CHECK_FREQUENCY = 1000;
 setInterval(() => {
   if (GLOBAL_TIMER.currentTime === 0) {
     if (isTimerDone && isStudying) {
@@ -80,19 +80,19 @@ function getTimeAsString(time) {
   const MINUTES = Math.floor((time - HOURS * 3600) / 60);
   const SECONDS = time - HOURS * 3600 - MINUTES * 60;
 
-  let message = ""
-  const TIME = [HOURS, MINUTES, SECONDS]
+  let message = "";
+  const TIME = [HOURS, MINUTES, SECONDS];
   for (let i = 0; i < 3; i++) {
     if (TIME[i] < 10) {
-      message += `0${TIME[i]}`
+      message += `0${TIME[i]}`;
     } else {
-      message += String(TIME[i])
+      message += String(TIME[i]);
     }
     if (i != 2) {
-      message += ":"
+      message += ":";
     }
   }
-  return message
+  return message;
 }
 
 // Preset timers
@@ -158,13 +158,13 @@ BUY_WHITE_BUNNY.addEventListener("click", () => {
 
 
 SET_POMODORO_BUTTON.addEventListener("click", () => {
-  addTaskToTaskList("Study", 1500)
+  addTaskToTaskList("Study", 1500);
   isStudying = true;
   isTimerDone = false;
 })
 
 SET_SHORT_BREAK_BUTTON.addEventListener("click", () => {
-  addTaskToTaskList("Short Break", 300)
+  addTaskToTaskList("Short Break", 300);
   isStudying = false;
   isTimerDone = false;
 })
@@ -182,16 +182,16 @@ TIMER_START_BUTTON.addEventListener("click", () => {
 
 TIMER_STOP_BUTTON.addEventListener("click", () => {
   if (GLOBAL_TIMER.timer) {
-    GLOBAL_TIMER.pauseTimer()
+    GLOBAL_TIMER.pauseTimer();
   } else {
-    GLOBAL_TIMER.runTimer()
+    GLOBAL_TIMER.runTimer();
   }
 })
 
 
 function addTaskToTaskList(name, time) {
   const NEW_TASK = new Task(name, time);
-  GLOBAL_TASK_LIST.addTask(NEW_TASK)
+  GLOBAL_TASK_LIST.addTask(NEW_TASK);
   GLOBAL_TASK_LIST.displayTasks();
 }
 
@@ -200,10 +200,10 @@ function runTasks() {
   if (TASKS_TO_RUN.length > 0) {
     const CURRENT_TASK = TASKS_TO_RUN[0];
     GLOBAL_TASK_LIST.tasksList.shift();
-    GLOBAL_TIMER.setTime(CURRENT_TASK.time)
+    GLOBAL_TIMER.setTime(CURRENT_TASK.time);
     GLOBAL_TIMER.displayTime();
     CURRENT_TASK_DISPLAY.innerText = CURRENT_TASK.taskLabel;
-    CURRENT_TASK.deleteBlock()
+    CURRENT_TASK.deleteBlock();
 
     isTimerDone = true;
   }
@@ -225,12 +225,6 @@ function bunniesShopPopup() {
 
 function hideBunniesShopPopup() {
   BUNNIES_SHOP.style.display = "none";
-}
-
-
-function displayBackgroundShop() {
-  for (let i = 0; i < BACKGROUNDS_TO_BUY.length; i++) {
-  }
 }
 
 function buyItem(cost) {

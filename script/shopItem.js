@@ -1,7 +1,7 @@
 class shopItem {
   constructor(imageSrc, id) {
-    this.imageSrc = imageSrc
-    this.id = id
+    this.imageSrc = imageSrc;
+    this.id = id;
     this.HTML_CONTAINER;
   }
 
@@ -10,11 +10,11 @@ class shopItem {
     this.HTML_CONTAINER.setAttribute("class", "shop-item");
 
     const LABEL = document.createElement("p");
-    LABEL.style.fontSize = "Large"
-    LABEL.style.color = "black"
+    LABEL.style.fontSize = "Large";
+    LABEL.style.color = "black";
     LABEL.innerText = this.id;
   
-    const IMAGE = document.createElement("img")
+    const IMAGE = document.createElement("img");
     IMAGE.src = `./imgs/${this.imageSrc}`; 
     IMAGE.style.width = `${imageWidth}px`;
     IMAGE.style.height = `${imageHeight}px`;
@@ -23,9 +23,9 @@ class shopItem {
     BUTTON.innerText = "Buy";
     BUTTON.setAttribute("id", this.id + "-button");
 
-    this.HTML_CONTAINER.appendChild(IMAGE)
-    this.HTML_CONTAINER.appendChild(LABEL)
-    this.HTML_CONTAINER.appendChild(BUTTON)
+    this.HTML_CONTAINER.appendChild(IMAGE);
+    this.HTML_CONTAINER.appendChild(LABEL);
+    this.HTML_CONTAINER.appendChild(BUTTON);
 
     return this.HTML_CONTAINER;
   }

@@ -12,8 +12,8 @@ class CountdownTimer {
   }
   setTime(time) {
     this.pauseTimer();
-    this.currentTime = time
-    this.TOTAL_TIME = time
+    this.currentTime = time;
+    this.TOTAL_TIME = time;
   }
   getTime() {
     return this.currentTime;
@@ -29,7 +29,7 @@ class CountdownTimer {
   // Interface Code
   pauseTimer() {
     if (this.timer) {
-      clearInterval(this.timer)  
+      clearInterval(this.timer);  
       this.timer = undefined;
     }
   }
@@ -43,7 +43,7 @@ class CountdownTimer {
           this.currentTime = 0;
           this.pauseTimer();
         }
-        this.displayTime()
+        this.displayTime();
       }, 1000)
     }
   }
@@ -62,17 +62,17 @@ class CountdownTimer {
 
 
   displayTime() {
-    let message = ""
+    let message = "";
     const TIME = this.getTimeInHourFormat();
     for (let i = 0; i < 3; i++) {
       if (TIME[i] < 10) {
-        message += `0${TIME[i]}`
+        message += `0${TIME[i]}`;
       } else {
-        message += String(TIME[i])
+        message += String(TIME[i]);
       }
 
       if (i != 2) {
-        message += ":"
+        message += ":";
       }
     }
     this.displayElement.innerText = message;
