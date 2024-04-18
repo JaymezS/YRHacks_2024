@@ -55,8 +55,7 @@ th.other {
 /* Menu Bar */
 
 div.menuBar {
-  background-color: #e3dbd3;
-  height: 44px;
+  background-color: none;
   position: -webkit-sticky;
   position: sticky;
   top: 0;
