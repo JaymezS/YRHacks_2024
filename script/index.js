@@ -28,6 +28,15 @@ function setTimer(time) {
 }
 
 
+// checker
+const CHECK_FREQUENCY = 1000
+setInterval(() => {
+  if (GLOBAL_TIMER.currentTime === 0) {
+    runTasks()
+  }
+}, CHECK_FREQUENCY)
+
+
 window.addEventListener("load", function() {
   setTimer(1500); 
 })
@@ -54,6 +63,7 @@ SET_LONG_BREAK_BUTTON.addEventListener("click", () => {
 })
 
 TIMER_START_BUTTON.addEventListener("click", () => {
+  runTasks();
   GLOBAL_TIMER.runTimer();
 })
 
@@ -77,6 +87,8 @@ function addNewTask() {
     GLOBAL_TASK_LIST.addTask(NEW_TASK)
     GLOBAL_TASK_LIST.displayTasks();
   }
+  GLOBAL_TIMER.setTime(GLOBAL_TASK_LIST.tasksList[0].time)
+  GLOBAL_TIMER.displayTime()
 }
 
 
