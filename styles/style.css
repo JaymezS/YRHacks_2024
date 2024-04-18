@@ -43,7 +43,7 @@ button {
 div.to-do {
   padding: 20px 30px;
   background-color: rgba(255, 255, 255, 0.888);
-  box-shadow: 0px 16px 32px 0px rgba(0,0,0,0.2);
+  box-shadow: 0px 16px 32px 0px rgba(0,0,0,0.3);
 }
 
 div.to-do p {
@@ -84,7 +84,7 @@ div.main-text {
   width: 50%;
   text-align: center;
   line-height: 75px;
-  box-shadow: 0px 16px 32px 0px rgba(0,0,0,0.2);
+  box-shadow: 0px 16px 32px 0px rgba(0,0,0,0.3);
 }
 
 div.other {
