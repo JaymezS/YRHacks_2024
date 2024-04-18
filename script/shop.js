@@ -1,8 +1,10 @@
 class Shop {
   shopList;
   shopDisplayElement;
-  constructor() {
+  type
+  constructor(type) {
     this.shopList = [];
+    this.type = type;
   }
 
   setShopDisplayElement(element) {
@@ -17,7 +19,11 @@ class Shop {
     this.shopDisplayElement.innerHTML = "";
     for (let i = 0; i < this.shopList.length; i++) {
       const ITEM = this.shopList[i];
-      this.shopDisplayElement.appendChild(ITEM.createItemHTML())
+      if (this.type === "bunnies") {
+        this.shopDisplayElement.appendChild(ITEM.createItemHTML(100, 100))
+      } else if (this.type === "background") {
+        this.shopDisplayElement.appendChild(ITEM.createItemHTML(160, 90))
+      }
     }
   }
 
