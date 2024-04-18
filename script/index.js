@@ -17,6 +17,15 @@ const TASK_TIME_INPUT = document.getElementById("task-time-input")
 const GLOBAL_TIMER = new CountdownTimer(0)
 GLOBAL_TIMER.setDisplayElement(TIMER_DISPLAY);
 
+function setTimer(time) {
+  GLOBAL_TIMER.setTime(time);
+  GLOBAL_TIMER.displayTime();
+}
+
+window.addEventListener("load", function() {
+  setTimer(1500); 
+})
+
 const GLOBAL_TASK_LIST = new Tasks();
 
 ADD_TASK_BUTTON.addEventListener("click", () => {
@@ -25,18 +34,15 @@ ADD_TASK_BUTTON.addEventListener("click", () => {
 
 // Preset timers
 SET_POMODORO_BUTTON.addEventListener("click", () => {
-  GLOBAL_TIMER.setTime(1500);
-  GLOBAL_TIMER.displayTime();
+  setTimer(1500);
 })
 
 SET_SHORT_BREAK_BUTTON.addEventListener("click", () => {
-  GLOBAL_TIMER.setTime(300);
-  GLOBAL_TIMER.displayTime();
+  setTimer(300);
 })
 
 SET_LONG_BREAK_BUTTON.addEventListener("click", () => {
-  GLOBAL_TIMER.setTime(600);
-  GLOBAL_TIMER.displayTime();
+  setTimer(600);
 })
 
 SET_TIMER_BUTTON.addEventListener("click", () => {
