@@ -58,9 +58,12 @@ div.to-do {
 
 
 #tasks-list-display {
+  width: 300px;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
   height:160px;
   overflow-y: scroll;
-
 }
 
 th.to-do {
