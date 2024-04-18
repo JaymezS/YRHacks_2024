@@ -41,31 +41,54 @@
 
   <br/>
 
+  <!-- Middle of the screen -->
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
 
-  <h1>Heading</h1>
+  <table>
+    <th class="to-do">
+      <p>To Do:</p>
+      <hr>
 
+      <div id="tasks">
+
+        <button id="add-task-button">Add Task</button>
+
+      </div>
+    </th>
+
+    <th class="main-text">
+      <p id="quote">quote</p>
+  
+      <h1 id="time">25:00</h1>
+  
+      <button id="start-stop-button"></button>
+      <button id="reset-button">Reset</button>
+    </th>
+
+    <th class="other" background="bunny1.png">
+      <p>Hours:</p>
+      <input type="text" id="timer-hour-input">
+      <p>Minutes</p>
+      <input type="text" id="timer-minute-input">
+      <p>Seconds</p>
+      <input type="text" id="timer-second-input">
+      <button id="set-timer-button">Set Timer</button>
+      <p>Timer: <span id="timer-display"></span></p>
+      <button id="timer-start-button">Start</button>
+      <button id="timer-stop-button">Stop/Pause</button>
+    </th>
+  </table>
+
+  <!-- This should be deleted because we added it to the dropdown menu -->
   <div>
     <button id="pomodoro-button">Pomodoro</button>
     <button id="short-break-button">Short Break</button>
     <button id="long-break-button">Long Break</button>
-  </div>
-
-  <p>Hours:</p>
-  <input type="text" id="timer-hour-input">
-  <p>Minutes</p>
-  <input type="text" id="timer-minute-input">
-  <p>Seconds</p>
-  <input type="text" id="timer-second-input">
-  <button id="set-timer-button">Set Timer</button>
-  <p>Timer: <span id="timer-display"></span></p>
-  <button id="timer-start-button">Start</button>
-  <button id="timer-stop-button">Stop/Pause</button>
-
-  <div id="tasks">
-    <h3>Tasks</h3>
-
-    <button id="add-task-button">Add Task</button>
-
   </div>
 
   <script src="./script/Timer.js"></script>

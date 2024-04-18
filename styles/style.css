@@ -1,29 +1,46 @@
 body {
   font-family: 'Rubik';
+  color: #786b6b;
+
+  background-image: 'background.png';
+  background-repeat: no-repeat;
+  background-attachment: fixed; 
+  background-size: cover;
 }
 
 button {
   font-family: 'Rubik';
 }
 
-/* Pages Glossary */
+/* Main Text */
 
-button.pagesButton {
+table {
+  border-spacing: 50px;
+  width: 90%;
+  margin: auto;
+}
+
+th {
   border: none;
-  background-color: #ffffff00;
-  color: #786b6b;
-  padding: 14px 16px;
-  border-radius: 5px;
+  background-color: none;
+  text-align: center;
+  vertical-align: top;
+  padding: 8px;
 }
 
-button.pagesButton:hover {
-  background-color: #e3dbd380;
+th.toDo {
+  width: 25%;
 }
 
-p.filters {
-  display: inline;
-  padding: 14px 16px;
-  border-radius: 5px;
+th.mainText {
+  width: 50%;
+}
+
+th.other {
+  width: 25%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 /* Menu Bar */
