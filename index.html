@@ -22,9 +22,9 @@
     <div style="float:left" class="dropdown">
       Settings
       <div style="float:left" class="dropdownContent">
-        <button type="button" id="a" style="float:left" class="dropdownContent" onclick="openPomodoroTimer();">Pomodoro</button>
-        <button type="button" id="b" style="float:left" class="dropdownContent" onclick="openShortBreakTimer();">Short Break</button>
-        <button type="button" id="c" style="float:left" class="dropdownContent" onclick="openLongBreak();">Long Break</button>
+        <button type="button" id="pomodoro-button" style="float:left" class="dropdownContent">Pomodoro</button>
+        <button type="button" id="short-break-button" style="float:left" class="dropdownContent">Short Break</button>
+        <button type="button" id="long-break-button" style="float:left" class="dropdownContent">Long Break</button>
         <button type="button" id="c" style="float:left" class="dropdownContent" onclick="openCustomTimer();">Custom Timer</button>
       </div>
     </div>
@@ -85,13 +85,6 @@
       <button id="timer-stop-button">Stop/Pause</button>
     </th>
   </table>
-
-  <!-- This should be deleted because we added it to the dropdown menu -->
-  <div>
-    <button id="pomodoro-button">Pomodoro</button>
-    <button id="short-break-button">Short Break</button>
-    <button id="long-break-button">Long Break</button>
-  </div>
 
   <script src="./script/Timer.js"></script>
   <script src="./script/tasks.js"></script>
