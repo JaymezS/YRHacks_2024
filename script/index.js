@@ -38,7 +38,7 @@ BACKGROUND_SHOP_CLASS.addItem(new shopItem("background-library.PNG", "Library"))
 BACKGROUND_SHOP_CLASS.displayAll()
 BUNNIES_SHOP_CLASS.displayAll()
 
-let coins = 100;
+let coins = 1500;
 let isTimerDone = false;
 let isStudying = false;
 
