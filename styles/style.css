@@ -11,6 +11,7 @@ body {
   background-image: 'background.png';
   background-repeat: no-repeat;
   background-attachment: fixed; 
+  background-position: center center;
   background-size: cover;
 }
 
@@ -40,8 +41,14 @@ button {
 
 
 div.to-do {
-  padding: 15px;
-  background-color: rgba(255, 255, 255, 0.666);
+  padding: 20px 30px;
+  background-color: rgba(255, 255, 255, 0.888);
+  box-shadow: 0px 16px 32px 0px rgba(0,0,0,0.2);
+}
+
+div.to-do p {
+  font-size: 20px;
+  margin: 0;
 }
 
 .task-container {
@@ -49,7 +56,7 @@ div.to-do {
   height:60px;
   display:flex;
   align-items: center;
-  justify-content: center;
+  justify-content: center;  
   border:10px solid lightgray;
   border-radius: 10px;
   margin-top:5px;
@@ -63,7 +70,7 @@ div.to-do {
   display:flex;
   flex-direction: column;
   align-items: center;
-  height:160px;
+  height:320px;
   overflow-y: scroll;
 }
 
@@ -72,10 +79,11 @@ th.to-do {
 }
 
 div.main-text {
-  background-color: rgba(255, 255, 255, 0.666);
+  background-color: rgba(255, 255, 255, 0.888);
   width: 50%;
   text-align: center;
   line-height: 75px;
+  box-shadow: 0px 16px 32px 0px rgba(0,0,0,0.2);
 }
 
 div.other {
