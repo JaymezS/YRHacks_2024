@@ -15,11 +15,8 @@ GLOBAL_TIMER.setDisplayElement(TIMER_DISPLAY);
 const GLOBAL_TASK_LIST = new Tasks();
 GLOBAL_TASK_LIST.setTasksDisplayContainer(TASKS_LIST_DISPLAY)
 
-
 let coins = 0;
-
-
-
+let isTimerDone = false;
 
 function setTimer(time) {
   GLOBAL_TIMER.setTime(time);
@@ -31,9 +28,12 @@ function setTimer(time) {
 const CHECK_FREQUENCY = 1000
 setInterval(() => {
   if (GLOBAL_TIMER.currentTime === 0) {
+    if (isTimerDone) {
+      coins += GLOBAL_TIMER.TOTAL_TIME / 60;
+      document.getElementById("total-coins").innerText = coins;
+      isTimerDone = false;
+    }
 
-    // a timer runs out (assume it is completed)
-    coins
     runTasks()
   }
 }, CHECK_FREQUENCY)
@@ -43,6 +43,26 @@ window.addEventListener("load", function() {
   setTimer(0); 
 })
 
+
+function getTimeAsString(time) {
+  const HOURS = Math.floor(time / 3600);
+  const MINUTES = Math.floor((time - HOURS * 3600) / 60);
+  const SECONDS = time - HOURS * 3600 - MINUTES * 60;
+
+  let message = ""
+  const TIME = [HOURS, MINUTES, SECONDS]
+  for (let i = 0; i < 3; i++) {
+    if (TIME[i] < 10) {
+      message += `0${TIME[i]}`
+    } else {
+      message += String(TIME[i])
+    }
+    if (i != 2) {
+      message += ":"
+    }
+  }
+  return message
+}
 
 // Preset timers
 SET_POMODORO_BUTTON.addEventListener("click", () => {
@@ -86,5 +106,7 @@ function runTasks() {
     GLOBAL_TIMER.displayTime();
     CURRENT_TASK_DISPLAY.innerText = CURRENT_TASK.taskLabel;
     CURRENT_TASK.deleteBlock()
+
+    isTimerDone = true;
   }
 }

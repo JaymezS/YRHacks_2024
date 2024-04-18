@@ -8,9 +8,11 @@ class Task {
   }
 
   createBlock() {
-    this.taskContainer= document.createElement("div");
+    this.taskContainer = document.createElement("div");
+    this.taskContainer.setAttribute("class", "task-container")
+
     const TASK_NAME = this.taskLabel;
-    this.taskContainer.innerText = TASK_NAME + " Time: " + String(this.time);
+    this.taskContainer.innerText = TASK_NAME + " for " + getTimeAsString(this.time);
     return this.taskContainer;
   }
 
