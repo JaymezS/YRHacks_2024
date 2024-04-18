@@ -22,10 +22,10 @@ GLOBAL_TASK_LIST.setTasksDisplayContainer(TASKS_LIST_DISPLAY)
 const BACKGROUND_SHOP_CLASS = new Shop();
 BACKGROUND_SHOP_CLASS.setShopDisplayElement(BACKGROUNDS_AVAILABLE_DISPLAY)
 
-BACKGROUND_SHOP_CLASS.addItem(new shopItem("background-beach.png", "Beach"))
-BACKGROUND_SHOP_CLASS.addItem(new shopItem("background-field.png", "Field"))
-BACKGROUND_SHOP_CLASS.addItem(new shopItem("background-hell.png", "Hell"))
-BACKGROUND_SHOP_CLASS.addItem(new shopItem("background-library.png", "Library"))
+BACKGROUND_SHOP_CLASS.addItem(new shopItem("background-beach.PNG", "Beach"))
+BACKGROUND_SHOP_CLASS.addItem(new shopItem("background-field.PNG", "Field"))
+BACKGROUND_SHOP_CLASS.addItem(new shopItem("background-hell.PNG", "Hell"))
+BACKGROUND_SHOP_CLASS.addItem(new shopItem("background-library.PNG", "Library"))
 
 BACKGROUND_SHOP_CLASS.displayAll()
 
