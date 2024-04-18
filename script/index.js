@@ -27,6 +27,7 @@ function setTimer(time) {
   GLOBAL_TIMER.displayTime();
 }
 
+
 window.addEventListener("load", function() {
   setTimer(1500); 
 })
@@ -78,5 +79,15 @@ function addNewTask() {
     const NEW_TASK = new Task(TASK_NAME, TASK_TIME);
     GLOBAL_TASK_LIST.addTask(NEW_TASK)
     GLOBAL_TASK_LIST.displayTasks();
+  }
+}
+
+
+function runTasks() {
+  const TASKS_TO_RUN = GLOBAL_TASK_LIST.tasksList;
+  if (TASKS_TO_RUN.length > 0) {
+    const CURRENT_TASK = TASKS_TO_RUN[0];
+    GLOBAL_TASK_LIST.tasksList.shift();
+    GLOBAL_TIMER.setTime(CURRENT_TASK.time)
   }
 }
