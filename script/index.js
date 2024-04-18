@@ -110,15 +110,27 @@ BUY_BEACH_BUTTON.addEventListener("click", () => {
 })
 
 BUY_FIELD_BUTTON.addEventListener("click", () => {
-  buyItem(100);
+  const bought = buyItem(100);
+  console.log(bought);
+  if (bought) {
+    document.body.style.backgroundImage = "url('imgs/background-field.PNG')";
+  }
 })
 
 BUY_HELL_BUTTON.addEventListener("click", () => {
-  buyItem(100);
+  const bought = buyItem(100);
+  console.log(bought);
+  if (bought) {
+    document.body.style.backgroundImage = "url('imgs/background-hell.PNG')";
+  }
 })
 
 BUY_LIBRARY_BUTTON.addEventListener("click", () => {
-  buyItem(100);
+  const bought = buyItem(100);
+  console.log(bought);
+  if (bought) {
+    document.body.style.backgroundImage = "url('imgs/background-library.PNG')";
+  }
 })
 
 SET_POMODORO_BUTTON.addEventListener("click", () => {
