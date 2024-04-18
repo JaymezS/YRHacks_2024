@@ -6,7 +6,7 @@ class CountdownTimer {
 
   // GETTERS AND SETTERS
 
-  setDisplayElement(htmlTextElement) {
+  setDisplayElement(htmlTextElement = TIMER_DISPLAY) {
     this.displayElement = htmlTextElement;
   }
   setTime(time) {
@@ -37,10 +37,9 @@ class CountdownTimer {
     if (!this.timer) {
       this.timer = setInterval(() => {
         this.currentTime -= 1;
-        console.log("ran")
         if (this.currentTime <= 0) {
           this.currentTime = 0;
-          this.pauseTimer()
+          this.pauseTimer();
         }
         this.displayTime()
       }, 1000)
