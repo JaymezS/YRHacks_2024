@@ -223,7 +223,6 @@ function bunniesShopPopup() {
   BUNNIES_SHOP.style.display = "block";
 }
 
-
 function hideBunniesShopPopup() {
   BUNNIES_SHOP.style.display = "none";
 }
