@@ -95,6 +95,32 @@ function getTimeAsString(time) {
 }
 
 // Preset timers
+
+const BUY_BEACH_BUTTON = document.getElementById("Beach-button");
+const BUY_FIELD_BUTTON = document.getElementById("Field-button");
+const BUY_HELL_BUTTON = document.getElementById("Hell-button");
+const BUY_LIBRARY_BUTTON = document.getElementById("Library-button");
+
+BUY_BEACH_BUTTON.addEventListener("click", () => {
+  const bought = buyItem(100);
+  console.log(bought);
+  if (bought) {
+    document.body.style.backgroundImage = "url('imgs/background-beach.PNG')";
+  }
+})
+
+BUY_FIELD_BUTTON.addEventListener("click", () => {
+  buyItem(100);
+})
+
+BUY_HELL_BUTTON.addEventListener("click", () => {
+  buyItem(100);
+})
+
+BUY_LIBRARY_BUTTON.addEventListener("click", () => {
+  buyItem(100);
+})
+
 SET_POMODORO_BUTTON.addEventListener("click", () => {
   addTaskToTaskList("Study", 1500)
   isStudying = true;
@@ -170,4 +196,14 @@ function hideBunniesShopPopup() {
 function displayBackgroundShop() {
   for (let i = 0; i < BACKGROUNDS_TO_BUY.length; i++) {
   }
+}
+
+function buyItem(cost) {
+  if (coins >= cost) {
+    coins -= cost;
+    updateCoinsDisplay();
+    return true;
+  }
+
+  return false;
 }

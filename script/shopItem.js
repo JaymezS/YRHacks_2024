@@ -21,6 +21,7 @@ class shopItem {
 
     const BUTTON = document.createElement("button");
     BUTTON.innerText = "Buy";
+    BUTTON.setAttribute("id", this.id + "-button");
 
     this.HTML_CONTAINER.appendChild(IMAGE)
     this.HTML_CONTAINER.appendChild(LABEL)
