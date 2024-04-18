@@ -163,7 +163,7 @@ button:hover {
   border-radius: 10px;
 }
 
-#background-shop-popup {
+#background-shop-popup, #bunnies-shop-popup{
   display: none;
   position: fixed;
   top: 10vh;
@@ -177,7 +177,7 @@ button:hover {
 }
 
 
-#background-exit-button {
+#background-exit-button, #bunnies-exit-button  {
   width:80vw;
   height:100px;
   border-radius: 20px, 20px, 0, 0;

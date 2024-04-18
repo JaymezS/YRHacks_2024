@@ -11,13 +11,17 @@ const CURRENT_TASK_DISPLAY = document.getElementById("current-task-display");
 const TOTAL_COINS_DISPLAY = document.getElementById("total-coins")
 const BACKGROUND_SHOP = document.getElementById("background-shop-popup");
 const BACKGROUNDS_AVAILABLE_DISPLAY = document.getElementById("backgrounds-available")
-
+const BUNNIES_SHOP = document.getElementById("bunnies-shop-popup")
+const BUNNIES_AVAILABLE_DISPLAY = document.getElementById("bunnies-available")
 
 const GLOBAL_TIMER = new CountdownTimer(0)
 GLOBAL_TIMER.setDisplayElement(TIMER_DISPLAY);
 
 const GLOBAL_TASK_LIST = new Tasks();
 GLOBAL_TASK_LIST.setTasksDisplayContainer(TASKS_LIST_DISPLAY)
+
+const BUNNIES_SHOP_CLASS = new Shop();
+BUNNIES_SHOP_CLASS.setShopDisplayElement(BUNNIES_AVAILABLE_DISPLAY)
 
 const BACKGROUND_SHOP_CLASS = new Shop();
 BACKGROUND_SHOP_CLASS.setShopDisplayElement(BACKGROUNDS_AVAILABLE_DISPLAY)
@@ -151,6 +155,15 @@ function backgroundShopPopup() {
 
 function hideBackgroundShopPopup() {
   BACKGROUND_SHOP.style.display = "none";
+}
+
+function bunniesShopPopup() {
+  BUNNIES_SHOP.style.display = "block";
+}
+
+
+function hideBunniesShopPopup() {
+  BUNNIES_SHOP.style.display = "none";
 }
 
 
