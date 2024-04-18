@@ -12,8 +12,6 @@ const ADD_TASK_BUTTON = document.getElementById("add-task-button");
 const TASK_NAME_INPUT = document.getElementById("to-do-name");
 const TASK_TIME_INPUT = document.getElementById("task-time-input")
 const TASKS_LIST_DISPLAY = document.getElementById("tasks-list-display")
-const RESET_BUTTON = document.getElementById("reset-button");
-
 
 const GLOBAL_TIMER = new CountdownTimer(0)
 GLOBAL_TIMER.setDisplayElement(TIMER_DISPLAY);
@@ -39,10 +37,6 @@ setInterval(() => {
 
 window.addEventListener("load", function() {
   setTimer(1500); 
-})
-
-RESET_BUTTON.addEventListener("click", () => {
-  GLOBAL_TIMER.resetTimer();
 })
 
 ADD_TASK_BUTTON.addEventListener("click", () => {
