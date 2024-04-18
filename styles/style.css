@@ -19,7 +19,7 @@ button {
   font-family: 'Rubik';
   border: none;
   padding: 3px 10px;
-  border-radius: 2px;
+  border-radius: 10px;
 }
 
 /* Main Text */
@@ -162,25 +162,6 @@ button:hover {
   background-color: #f6cbc0;
   border-radius: 10px;
 }
-
-/* Task Bar */
-#tasks {
-  text-align: left;
-}
-
-#tasks h3 {
-  margin-top: 20px;
-  margin-bottom: 5px;
-}
-
-#tasks input, #tasks button {
-  width: 100%;
-}
-
-#tasks button {
-  margin-top: 20px;
-}
-
 
 #background-shop-popup {
   display: none;
