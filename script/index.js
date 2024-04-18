@@ -15,11 +15,8 @@ GLOBAL_TIMER.setDisplayElement(TIMER_DISPLAY);
 const GLOBAL_TASK_LIST = new Tasks();
 GLOBAL_TASK_LIST.setTasksDisplayContainer(TASKS_LIST_DISPLAY)
 
-
 let coins = 0;
-
-
-
+let isTimerDone = false;
 
 function setTimer(time) {
   GLOBAL_TIMER.setTime(time);
@@ -31,9 +28,12 @@ function setTimer(time) {
 const CHECK_FREQUENCY = 1000
 setInterval(() => {
   if (GLOBAL_TIMER.currentTime === 0) {
+    if (isTimerDone) {
+      coins += GLOBAL_TIMER.TOTAL_TIME / 60;
+      document.getElementById("total-coins").innerText = coins;
+      isTimerDone = false;
+    }
 
-    // a timer runs out (assume it is completed)
-    coins
     runTasks()
   }
 }, CHECK_FREQUENCY)
@@ -106,5 +106,7 @@ function runTasks() {
     GLOBAL_TIMER.displayTime();
     CURRENT_TASK_DISPLAY.innerText = CURRENT_TASK.taskLabel;
     CURRENT_TASK.deleteBlock()
+
+    isTimerDone = true;
   }
 }
