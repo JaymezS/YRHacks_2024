@@ -12,7 +12,7 @@
 
   <link rel="stylesheet" href="styles/style.css">
 </head>
-<body>
+<body background="imgs/background-library.PNG">
   <!-- Menu Bar -->
   <div class="menuBar" id="menu-bar">
     <!-- settings button on the right of the menu bar -->
@@ -50,8 +50,8 @@
   <br/>
   <br/>
 
-  <table>
-    <th class="to-do">
+  <div class="flex-container">
+    <div class="to-do">
       <p>Current Task: <span id="current-task-display">None</span></p>
 
       <p>To Do:</p>
@@ -61,16 +61,18 @@
         
       </div>
       <p id="tasks-list-display"></p>
-    </th>
-
-    <th class="main-text">
+    </div>
+    <div class="main-text">
       <p id="quote">quote</p>
       <h1 id="timer-display"></h1>
 
       <button id="timer-start-button">Start Next Task</button>
       <button id="timer-stop-button">Start/Pause</button>
-    </th>
-  </table>
+    </div>
+    <div class="other">
+      <img id="bunny-image" width="100%"/>
+    </div>
+  </div>
 
   <script src="./script/Task.js"></script>
   <script src="./script/Timer.js"></script>

@@ -23,30 +23,38 @@ button {
 
 /* Main Text */
 
-table {
-  border-spacing: 50px;
-  width: 90%;
-  margin: auto;
-}
-
-th {
-  border: none;
+.flex-container {
+  display: flex;
+  align-items: stretch;
   background-color: none;
-  text-align: center;
-  vertical-align: top;
-  padding: 8px;
+  justify-content: space-between;
+  margin: 30px;
 }
 
-th.to-do {
+.flex-container > div {
+  margin: 10px;
+  line-height: 75px;
+  font-size: 30px;
+  border-radius: 30px;
+}
+
+
+div.to-do {
+  background-color: rgba(255, 255, 255, 0.666);
   width: 25%;
 }
 
-th.mainText {
+div.main-text {
+  background-color: rgba(255, 255, 255, 0.666);
   width: 50%;
+  text-align: center;
 }
 
-th.other {
+div.other {
+  background-color: none;
   width: 25%;
+  margin-top: 100px;
+
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
