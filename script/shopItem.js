@@ -19,8 +19,12 @@ class shopItem {
     IMAGE.style.width = "160px";
     IMAGE.style.height = "90px";
 
+    const BUTTON = document.createElement("button");
+    BUTTON.innerText = "Buy";
+
     this.HTML_CONTAINER.appendChild(IMAGE)
     this.HTML_CONTAINER.appendChild(LABEL)
+    this.HTML_CONTAINER.appendChild(BUTTON)
 
     return this.HTML_CONTAINER;
   }
