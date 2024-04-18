@@ -1,6 +1,6 @@
 class Tasks {
   tasksDisplayContainer;
-  currentTasks;
+  tasksList;
 
   setTasksDisplayContainer(HTMLContainerElement) {
     this.tasksDisplayContainer = HTMLContainerElement;
@@ -8,18 +8,18 @@ class Tasks {
 
 
   addTask(task) {
-    this.currentTasks.push(task);
+    this.tasksList.push(task);
   }
 
   constructor() {
-    this.currentTasks = [];
+    this.tasksList = [];
   }
 
 
   displayTasks() {
     this.tasksDisplayContainer.innerHTML = "";
-    for (let i = 0; i < this.currentTasks.length; i++) {
-      this.tasksDisplayContainer.appendChild(this.currentTasks[i].createBlock());
+    for (let i = 0; i < this.tasksList.length; i++) {
+      this.tasksDisplayContainer.appendChild(this.tasksList[i].createBlock());
     }
   }
   //add delete function, choose task function etc.
