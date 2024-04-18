@@ -16,6 +16,7 @@ class shopItem {
   
     const IMAGE = document.createElement("img")
     IMAGE.src = `../imgs/${this.imageSrc}`; 
+    console.log(IMAGE.src)
     IMAGE.style.width = "160px";
     IMAGE.style.height = "90px";
 
